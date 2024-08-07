@@ -5,9 +5,9 @@ import requests
 #    metadata:read administration:write
 
 # Configurar org, token y prefijo
-token = 'insertar-token-de-acceso'
-org = 'pdep-sm'
-prefix = '2024-parcial-funcional-'
+token = 'insertar-token'
+org = 'insertar-org'
+prefix = 'insertar-prefijo'
 
 headers = {'Authorization': f'token {token}', 'Accept': 'application/vnd.github.v3+json'}
 
@@ -46,11 +46,12 @@ def change_permission_to_read(nroRepo, repo_name):
         print(f'{nroRepo:<2}. Permisos de {student_name} cambiados a {permiso_nuevo.get('permission')}.')
     else:
         print(f'Error: {response.status_code}')
-        print(response.text)        
+        print(response.text)
 
 print(f'Permisos para: {prefix}')
 nroRepo = 1
 for repo in filtered_repos:
     repo_name = repo['name']
+    student_name = repo_name.removeprefix(prefix)
     change_permission_to_read(nroRepo, repo_name)
     nroRepo += 1

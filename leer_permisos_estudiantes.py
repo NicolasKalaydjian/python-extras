@@ -5,9 +5,9 @@ import requests
 #    metadata:read 
 
 # Configurar org, token y prefijo
-token = 'insertar-token-de-acceso'
-org = 'pdep-sm'
-prefix = '2024-parcial-funcional-'
+token = 'insertar-token'
+org = 'insertar-org'
+prefix = 'insertar-prefijo'
 
 headers = {'Authorization': f'token {token}', 'Accept': 'application/vnd.github.v3+json'}
 
